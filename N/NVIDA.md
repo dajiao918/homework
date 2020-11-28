@@ -190,7 +190,7 @@ faces = face_detection.detectMultiScale(img,scaleFactor=1.1,
 
 ## 运行结果展示
 
-![](./img1.png)
+![](img1.png)
 
 ## 项目源码
 
