@@ -71,8 +71,8 @@ https://github.com/dajiao918/homework/tree/main/Emotion_Recognition
 | 陈浩   | ccc147569@gmail.com       | 2019010132 | 计科1905 |
 | 余兴广 | 3070261303@qq.com         | 2018010029 | 计科1906 |
 | 殷绍轩 | djmax96945147@outlook.com | 2018010636 | 计科1905 |
-| 姜明宇 |                           |            | 计科1905 |
-| 孙涛   |                           |            | 计科1905 |
+| 姜明宇 | 1617350667@qq.com         | 2019011254 | 计科1905 |
+| 孙涛   | 2179020062@qq.com         | 2019011170 | 计科1905 |
 
 
 
@@ -287,8 +287,8 @@ faces = face_detection.detectMultiScale(img,scaleFactor=1.1,
 
 ## 运行结果展示
 
-![image](https://github.com/dajiao918/homework/blob/main/Figures/Biden(1).png)
+![image](Figures/Biden(1).png)
 
-![image](https://github.com/dajiao918/homework/blob/main/Figures/Trump(1).png)
+![image](Figures/Trump(1).png)
 
 
