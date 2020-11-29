@@ -185,6 +185,7 @@ faces = face_detection.detectMultiScale(img,scaleFactor=1.1,
   * np.fromfile(filePath,dtype=np.uint8)，调⽤numpy库的fromfile⽅法，以指定类型读取⽂件。
   *  filePath:读取⽂件的路径。 
   * dtype=np.uint8：以uint8类型读取⽂件
+  show_camera函数：刷新摄像头获取的画面，将画面镜像翻转，并将数据传给识别方法进行识别，返回结果result。
 * 注：uint8类型是专⻔⽤于存储各种图像的（包括RGB，灰度图像等），范围是从0‒255。
 * `line375 timer_camera`计时器与`show_camera`函数绑定，`line397`设置定时器为30毫秒，每隔30 毫秒触发槽函数，执⾏`show_camera`⽅法，刷新摄像头画⾯。 经测试，*<u>**调整计时器间隔对识别⽤时有⼀定影响**</u>*。
 
