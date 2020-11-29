@@ -257,6 +257,8 @@ faces = face_detection.detectMultiScale(img,scaleFactor=1.1,
 
 ## 运行结果展示
 
-![](Figures/img1.png)
+![image](https://github.com/dajiao918/homework/blob/main/Figures/Biden(1).png)
+
+![image](https://github.com/dajiao918/homework/blob/main/Figures/Trump(1).png)
 
 
