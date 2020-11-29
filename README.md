@@ -4,7 +4,9 @@
 
 ## 项目描述
 
+1.基于Python 3实现表情识别模型训练及测试；
 
+2.基于Python 2实现NAO机器人利用已训练好的模型进行表情识别；
 
 ## 项目许可证
 
@@ -62,9 +64,13 @@ https://github.com/dajiao918/homework/tree/main/Emotion_Recognition
 
 
 
-## 项目计划
+## 项目计划 （版本、用户、推广）
 
+版本：1.0
 
+用户：基于Python进行机器学习以及使用Tensorflow进行深度学习
+
+推广：线上推广 
 
 ## 项目配置
 
