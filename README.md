@@ -1,4 +1,4 @@
-# 项目名称：基于NVIDIA GPU的深度学习和代码加速计算
+# 项目名称：基于NVIDIA-GPU的深度学习和代码加速计算
 
 [TOC]
 
@@ -78,9 +78,7 @@ https://github.com/dajiao918/homework/tree/main/Emotion_Recognition
 
 ## 缺陷追踪系统
 
-
-
-## 文档编制
+Bugzilla 2.3.0
 
 
 
@@ -88,7 +86,7 @@ https://github.com/dajiao918/homework/tree/main/Emotion_Recognition
 
 版本：1.0
 
-用户：基于Python进行机器学习以及使用Tensorflow进行深度学习
+用户：学习使用Tensorflow框架-Python实现深度学习学习的人群
 
 推广：线上推广 
 
@@ -141,22 +139,21 @@ https://github.com/dajiao918/homework/tree/main/Emotion_Recognition
          * buffering : 如果 buffering 的值被设为 0，就不会有寄存。如果 buffering 的值取 1，访问文件时会寄存行。如果将 buffering 的值设为大于 1 的整数，表明了这就是的寄存区的缓冲大小。如果取负值，寄存区的缓冲大小则为系统默认。
 
 * xml文件--数据集文件
-              * -stageType级联类型，目前只能取BOOST
-                  * -featureType训练使用的特征类型，目前支持的特征有Haar，LBP和HOG
-                  * -maxWeakCount每级强分类器中弱分类器的最大个数，当FA降不到指定的maxFalseAlarm时可以通过指定最大弱分类器个数停止单个强分类器
-                  
-         * cv2.CascadeClassifier()是opencv的级联分级器
-   * data.loc是根据索引来读取该索引下的数据，来自于pandas
-   * list(image_data.split()) ：通过指定分隔符对字符串进行[[切片](https://www.runoob.com/python/att-string-split.html)]，如果参数 num 有指定值，则分隔 num+1 个子字符串。e.g.print str.split( );# 以空格为分隔符，包含 \n
-         * np.asarray**(*****a*****,** ***dtype=None*****,** ***order=None*****)**[Convert the input to an array.](https://docs.scipy.org/doc/numpy-1.10.0/reference/generated/numpy.asarray.html)
 
+   * stageType级联类型，目前只能取BOOST
+   * featureType训练使用的特征类型，目前支持的特征有Haar，LBP和HOG
+   * maxWeakCount每级强分类器中弱分类器的最大个数，当FA降不到指定的maxFalseAlarm时可以通过指定最大弱分类器个数停止单个强分类器
 
+* cv2.CascadeClassifier()是opencv的级联分级器
+* data.loc是根据索引来读取该索引下的数据，来自于pandas
+* list(image_data.split()) ：通过指定分隔符对字符串进行[[切片](https://www.runoob.com/python/att-string-split.html)]，如果参数 num 有指定值，则分隔 num+1 个子字符串。e.g.print str.split( );# 以空格为分隔符，包含换行符
+* np.asarray**(*****a*****,** ***dtype=None*****,** ***order=None*****)**[Convert the input to an array.](https://docs.scipy.org/doc/numpy-1.10.0/reference/generated/numpy.asarray.html)
 
-   - python路径拼接os.path.join()函数
+   * python路径拼接os.path.join()函数
      
-- [Image.Fromarray(img.astype(‘uint 8’)，mode=‘rgb’)](https://cloud.tencent.com/developer/ask/219628)返回灰度图像
+   * [Image.Fromarray(img.astype(‘uint 8’)，mode=‘rgb’)](https://cloud.tencent.com/developer/ask/219628)返回灰度图像
 * cv2.imread():读取图片文件
-  *  imread函数有两个参数，第一个参数是图片路径，第二个参数表示读取图片的形式，有三种：
+  *  imread函数有两个参数，第一个参数是图片路径，第二个参数表示读取图片的形式，有2种：
     * cv2.IMREAD_COLOR：加载彩色图片，这个是默认参数，可以直接写1。
       LE：以灰度模式加载图片，可以直接写0。
     * cv2.IMREAD_UNCHANGED：包括alpha，可以直接写-1
@@ -167,12 +164,12 @@ faces = face_detection.detectMultiScale(img,scaleFactor=1.1,
                                                                      flags=cv2.CASCADE_SCALE_IMAGE)
   ```
   
-    - image表示的是要检测的输入图像
-    - objects表示检测到的人脸目标序列
-    - scaleFactor表示每次图像尺寸减小的比例
-    - minNeighbors表示每一个目标至少要被检测到3次才算是真的目标(因为周围的像素和不同的窗口大小都可以检测到人脸),
-    - minSize为目标的最小尺寸
-    - minSize为目标的最大尺寸
+    * image表示的是要检测的输入图像
+    * objects表示检测到的人脸目标序列
+    * scaleFactor表示每次图像尺寸减小的比例
+    * minNeighbors表示每一个目标至少要被检测到3次才算是真的目标(因为周围的像素和不同的窗口大小都可以检测到人脸),
+    * minSize为目标的最小尺寸
+    * minSize为目标的最大尺寸
 
      **总结：这个文件功能是读取数据_array_，然后转换成图像，在图像上框出人脸**
   
@@ -282,8 +279,8 @@ faces = face_detection.detectMultiScale(img,scaleFactor=1.1,
   ```
 
 
-  * **实现：**在ROI人脸识别区域为空时，会返回一个空值，而不会在该点进入死循环.
-  * **效果：**实现了在运行代码 FER_test.py 和 runMain.py ，开始进行人脸识别测试时不会出现内存占用过高导致运行程序闪退.
+  * **实现：**人脸被捕捉后不在摄像头捕捉范围内，像素点数量无法到达`48x48`个, 这个时候若强行生成`48x48`的矩阵，一定是会报错导致程序意外退出的。此语句保证了当像素点数量不足时，不触发表情识别。
+  * **效果：**运行文件`FER_test.py` 和 `runMain.py` 时候不会触发库函数调用失败的错误。
 
 ## 运行结果展示
 
