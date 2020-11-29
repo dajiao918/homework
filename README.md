@@ -106,7 +106,7 @@ https://github.com/dajiao918/homework/tree/main/Emotion_Recognition
 ### 1. **clean fer2013.py**
 * 初始化：定义emotion选项，并读取指定文档中的图片数据，检测共读取了多少张照片，并采用级联分级器设定人脸框的范围 (line:59-61).
     * `open(name[, mode[, buffering]])`函数，
-      	  * name : 文件名
+        * name : 文件名
          * mode : mode 决定了打开文件的模式：只读，写入，追加等。默认文件访问模式为只读(r)。
          * buffering : 如果 buffering 的值被设为 0，就不会有寄存。如果 buffering 的值取 1，访问文件时会寄存行。如果将 buffering 的值设为大于 1 的整数，表明了这就是的寄存区的缓冲大小。如果取负值，寄存区的缓冲大小则为系统默认。
 
@@ -121,7 +121,7 @@ https://github.com/dajiao918/homework/tree/main/Emotion_Recognition
          * np.asarray**(*****a*****,** ***dtype=None*****,** ***order=None*****)**[Convert the input to an array.](https://docs.scipy.org/doc/numpy-1.10.0/reference/generated/numpy.asarray.html)
 
 
-   	
+
    - python路径拼接os.path.join()函数
      
 - [Image.Fromarray(img.astype(‘uint 8’)，mode=‘rgb’)](https://cloud.tencent.com/developer/ask/219628)返回灰度图像
@@ -132,9 +132,9 @@ https://github.com/dajiao918/homework/tree/main/Emotion_Recognition
     * cv2.IMREAD_UNCHANGED：包括alpha，可以直接写-1
 - ```python
 faces = face_detection.detectMultiScale(img,scaleFactor=1.1,
-                           	                                          minNeighbors=5, 
-                           	                                          minSize=(30,30),
-                           	                                          flags=cv2.CASCADE_SCALE_IMAGE)
+                                                                     minNeighbors=5, 
+                                                                     minSize=(30,30),
+                                                                     flags=cv2.CASCADE_SCALE_IMAGE)
   ```
   
     - image表示的是要检测的输入图像
@@ -144,13 +144,10 @@ faces = face_detection.detectMultiScale(img,scaleFactor=1.1,
     - minSize为目标的最小尺寸
     - minSize为目标的最大尺寸
 
-   	  **总结：这个文件功能是读取数据_array_，然后转换成图像，在图像上框出人脸**
-   	
-   	
-   	
+     **总结：这个文件功能是读取数据_array_，然后转换成图像，在图像上框出人脸**
+  
 
-
-### 2. **EmotionRecongnition.py**	
+### 2. **EmotionRecongnition.py**
 
 * 用Qt设计一个界面，并检测摄像头功能是否正常工作 (line:378)（采用定时刷新摄像头捕获的画面），并且读取rgb图片类型将其转换为bgr (line:486)（因后续有OpenCV处理需求）.
 * `getcwd()`函数 返回当前⼯作⽬录。
@@ -164,24 +161,28 @@ faces = face_detection.detectMultiScale(img,scaleFactor=1.1,
 * 注：uint8类型是专⻔⽤于存储各种图像的（包括RGB，灰度图像等），范围是从0‒255。
 * `line375 timer_camera`计时器与`show_camera`函数绑定，`line397`设置定时器为30毫秒，每隔30 毫秒触发槽函数，执⾏`show_camera`⽅法，刷新摄像头画⾯。 经测试，*<u>**调整计时器间隔对识别⽤时有⼀定影响**</u>*。
 
-### 3. **FER_test.py**	
+### 3. **FER_test.py**
 
 * 实现简易的Qt界面，用于测试，并将bgr图片类型转为灰度图` (line:173)`（减少图像原始数据量，减少计算量，优化GPU对图像的处理），对摄像头所读取的数据进行处理，显示概率柱状图 `(line:177).`
   
-### 4. **Parse fer2013.py**	
+### 4. **Parse fer2013.py**
+
 * 实现`clean fer2013.py`中的初始化，并且将`csv`文件中的一维像素灰度数据，通过切片转换为`48x48`的矩阵，以恢复为图片文件。
 
-### 5. **real_time_video_me.py**	
+### 5. **real_time_video_me.py**
+
 * 实现 FER_test.py 的相同功能，并直接用于 runMain.py 中.
 * `fX, fY, fW, fH`: 刚开始的两个变量表示的是候选框x和y的位置，接下来两个变量的值表示的是候选框的宽度和高度
 * `cv2.cvtColor(frame,COLOR_BGR2GRAY)`将图片从BGR转成灰度图像
 
-### 6. **runMain.py**	
+### 6. **runMain.py**
+
 * 实现调出设计完整的Qt界面显示以及人脸识别系统.
 
-### 7. **train_emotion_classifier.py**		
+### 7. **train_emotion_classifier.py**
+
 *  人脸表情识别训练库
-       	构建模型，并在模型中使用了交叉熵损失函数 `(line:35)`（输出一个概率值，反映预测为正类的可能性），混淆矩阵 `(line:84)`（观察模型在不同类别的表现，并计算模型在对应类别中的准确率，使各个类别具有区分性）.
+       构建模型，并在模型中使用了交叉熵损失函数 `(line:35)`（输出一个概率值，反映预测为正类的可能性），混淆矩阵 `(line:84)`（观察模型在不同类别的表现，并计算模型在对应类别中的准确率，使各个类别具有区分性）.
             具体操作为改动参数来实现不同模型的创建，而从中创建的模型可以被导入`runMain.py`中实现人脸识别的概率分析.
 
 * `batch_size = 32 `(mini-batch gradient decent - 小批梯度下降)
@@ -228,9 +229,11 @@ faces = face_detection.detectMultiScale(img,scaleFactor=1.1,
 * `base_path = 'models/'`
 
   >训练模型数据上传位置
+
+
 ### 8. **fer2013_clean2.csv**
 
-   通过像素点数据集来算出情绪类别，每个数据--向量有2304(48*48)个值，数据被分为四个用途：`Training, CK+, Public Test, Private Test`
+通过像素点数据集来算出情绪类别，每个数据--向量有2304(48*48)个值，数据被分为四个用途：`Training, CK+, Public Test, Private Test`
 
 ## 程序算法测试
 
