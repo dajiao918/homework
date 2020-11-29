@@ -332,8 +332,8 @@ faces = face_detection.detectMultiScale(img,scaleFactor=1.1,
 
 ## 运行结果展示
 
-![image](Figures/Biden(1).png)
+![image](Figures/Biden.png)
 
-![image](Figures/Trump(1).png)
+![image](Figures/Trump.png)
 
 
