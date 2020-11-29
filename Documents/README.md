@@ -2,6 +2,22 @@
 
 [TOC]
 
+## 小组成员
+
+| 姓名   | 分工     |
+| ------ | -------- |
+| 陈浩   | 组长     |
+| 殷绍轩 | 代码分析 |
+| 姜明宇 | 代码分析 |
+| 孙涛   | 撰写文档 |
+| 余兴广 | 撰写文档 |
+
+
+
+## 项目源码
+
+https://github.com/dajiao918/homework/tree/main/Emotion_Recognition
+
 ## 项目配置
 
 1. 安装python3.6.8
@@ -191,19 +207,5 @@ faces = face_detection.detectMultiScale(img,scaleFactor=1.1,
 ## 运行结果展示
 
 ![](img1.png)
-
-## 项目源码
-
-http://www.baidu.com
-
-## 小组成员
-
-| 姓名   | 分工     |
-| ------ | -------- |
-| 陈浩   | 组长     |
-| 殷绍轩 | 代码分析 |
-| 姜明宇 | 代码分析 |
-| 孙涛   | 撰写文档 |
-| 余兴广 | 撰写文档 |
 
 
